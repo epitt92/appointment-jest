@@ -7,6 +7,8 @@ const { Step } = Steps;
 const NewAppointmentForm = () => {
   const [form] = Form.useForm();
   const [currentStep, setCurrentStep] = useState(0);
+
+  // Implement the loading while requesting API for UX.
   const [loading, setLoading] = useState(false);
 
   const handleFinish = async (values) => {
@@ -33,6 +35,7 @@ const NewAppointmentForm = () => {
   };
 
   const fetchContent = async () => {
+    // Implement better error handling for API requests.
     try {
       setLoading(true);
       let response = await fetch("https://kumba.free.beeceptor.com/me");
